@@ -1,0 +1,53 @@
+{
+	"schema_version": 1,
+	"quilt_loader": {
+		"group": "dev.cammiescorner",
+		"id": "gutsgunsglory",
+		"version": "${version}",
+		"metadata": {
+			"name": "Guts, Guns, and Glory",
+			"description": "A gun mod.",
+			"contributors": {
+				"TheRebelT": "Owner",
+				"Cammie": "Programmer"
+			},
+			"contact": {
+				"issues": "https://github.com/CammiePone/Guts-Guns-And-Glory/issues",
+				"sources": "https://github.com/CammiePone/Guts-Guns-And-Glory"
+			},
+			"icon": "assets/gutsgunsglory/icon.png"
+		},
+		"intermediate_mappings": "net.fabricmc:intermediary",
+		"entrypoints": {
+			"init": "dev.cammiescorner.guts_guns_glory.GutsGunsGlory",
+			"modmenu": "dev.cammiescorner.guts_guns_glory.common.config.GGGModMenu"
+		},
+		"depends": [
+			{
+				"id": "quilt_loader",
+				"versions": ">=0.18.2-"
+			},
+			{
+				"id": "quilted_fabric_api",
+				"versions": ">=5.0.0-"
+			},
+			{
+				"id": "minecraft",
+				"versions": "1.19.3"
+			},
+			{
+				"id": "midnightlib",
+				"versions": ">=1.1.0"
+			},
+			{
+				"id": "cardinal-components-base",
+				"versions": ">=5.1.0"
+			},
+			{
+				"id": "cardinal-components-entity",
+				"versions": ">=5.1.0"
+			}
+		]
+	},
+	"mixin": "gutsgunsglory.mixins.json"
+}

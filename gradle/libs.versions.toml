@@ -1,0 +1,26 @@
+[versions]
+# The latest versions are available at https://lambdaurora.dev/tools/import_quilt.html
+minecraft = "1.19.3"
+quilt_mappings = "1.19.3+build.23"
+quilt_loader = "0.18.2"
+
+quilted_fabric_api = "5.0.0-beta.6+0.74.0-1.19.3"
+cca = "5.1.0"
+midnightlib = "1.1.0-quilt"
+mixinextras = "0.1.1"
+modmenu = "5.0.2"
+
+[libraries]
+minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
+quilt_mappings = { module = "org.quiltmc:quilt-mappings", version.ref = "quilt_mappings" }
+quilt_loader = { module = "org.quiltmc:quilt-loader", version.ref = "quilt_loader" }
+
+quilted_fabric_api = { module = "org.quiltmc.quilted-fabric-api:quilted-fabric-api", version.ref = "quilted_fabric_api" }
+cca_base = { module = "dev.onyxstudios.cardinal-components-api:cardinal-components-base", version.ref = "cca" }
+cca_entity = { module = "dev.onyxstudios.cardinal-components-api:cardinal-components-entity", version.ref = "cca" }
+midnightlib = { module = "maven.modrinth:midnightlib", version.ref = "midnightlib" }
+mixinextras = { module = "com.github.LlamaLad7:MixinExtras", version.ref = "mixinextras" }
+modmenu = { module = "com.terraformersmc:modmenu", version.ref = "modmenu" }
+
+[plugins]
+quilt_loom = { id = "org.quiltmc.loom", version = "1.0.+" }
