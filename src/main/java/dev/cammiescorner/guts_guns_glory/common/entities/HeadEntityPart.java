@@ -1,8 +1,10 @@
-package dev.cammiescorner.guts_guns_glory.common.entity;
+package dev.cammiescorner.guts_guns_glory.common.entities;
 
 import dev.cammiescorner.guts_guns_glory.common.config.GGGConfig;
+import dev.cammiescorner.guts_guns_glory.common.registry.ModComponents;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.Vec3d;
 import org.quiltmc.qsl.entity.multipart.api.AbstractEntityPart;
 
@@ -15,8 +17,13 @@ public class HeadEntityPart extends AbstractEntityPart<LivingEntity> {
 
 	@Override
 	public boolean damage(DamageSource source, float amount) {
-		if((source.isProjectile() || GGGConfig.meleeCanHeadshot) && GGGConfig.headshotsBoostDamage)
-			amount *= GGGConfig.headshotDamageMultiplier;
+		if((source.isProjectile() || GGGConfig.meleeCanHeadshot)) {
+			if(source.getAttacker() instanceof PlayerEntity)
+				ModComponents.decrementBlood(getOwner(), ModComponents.getBlood(getOwner()), false);
+
+			if(GGGConfig.headshotsBoostDamage)
+				amount *= GGGConfig.headshotDamageMultiplier;
+		}
 
 		return super.damage(source, amount);
 	}

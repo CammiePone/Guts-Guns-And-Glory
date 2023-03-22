@@ -20,6 +20,8 @@
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
 			"init": "dev.cammiescorner.guts_guns_glory.GutsGunsGlory",
+			"client_init": "dev.cammiescorner.guts_guns_glory.client.GutsGunsGloryClient",
+			"cardinal-components": "dev.cammiescorner.guts_guns_glory.common.registry.ModComponents",
 			"modmenu": "dev.cammiescorner.guts_guns_glory.common.config.GGGModMenu"
 		},
 		"depends": [
@@ -49,5 +51,8 @@
 			}
 		]
 	},
-	"mixin": "gutsgunsglory.mixins.json"
+	"mixin": "gutsgunsglory.mixins.json",
+	"cardinal-components": [
+		"gutsgunsglory:blood"
+	]
 }
