@@ -1,5 +1,13 @@
 {
+  "item.gutsgunsglory.bandage": "Bandage",
+  "item.gutsgunsglory.blood_bag": "Blood Bag",
+  "item.gutsgunsglory.empty_blood_bag": "Empty Blood Bag",
+
   "effect.gutsgunsglory.bleed": "Bleed",
+
+  "itemGroup.gutsgunsglory.general": "Guts, Guns, and Glory",
+
+  "death.attack.gutsgunsglory.blood_loss": "%s died from blood loss",
 
   "gutsgunsglory.midnightconfig.title": "Guns, Guts, and Glory",
   "gutsgunsglory.midnightconfig.headshotsBoostDamage": "Should Headshots Boost Damage?",

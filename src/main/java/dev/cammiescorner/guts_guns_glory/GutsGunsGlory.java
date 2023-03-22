@@ -1,6 +1,7 @@
 package dev.cammiescorner.guts_guns_glory;
 
 import dev.cammiescorner.guts_guns_glory.common.config.GGGConfig;
+import dev.cammiescorner.guts_guns_glory.common.registry.ModItems;
 import dev.cammiescorner.guts_guns_glory.common.registry.ModStatusEffects;
 import eu.midnightdust.lib.config.MidnightConfig;
 import net.minecraft.util.Identifier;
@@ -17,6 +18,7 @@ public class GutsGunsGlory implements ModInitializer {
 	public void onInitialize(ModContainer mod) {
 		MidnightConfig.init(MOD_ID, GGGConfig.class);
 
+		ModItems.register();
 		ModStatusEffects.register();
 
 		LOGGER.info("Hello Quilt world from {}!", mod.metadata().name());

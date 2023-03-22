@@ -1,6 +1,7 @@
 package dev.cammiescorner.guts_guns_glory.common.components;
 
 import dev.cammiescorner.guts_guns_glory.common.registry.ModComponents;
+import dev.cammiescorner.guts_guns_glory.common.registry.ModDamageSource;
 import dev.cammiescorner.guts_guns_glory.common.registry.ModStatusEffects;
 import dev.onyxstudios.cca.api.v3.component.sync.AutoSyncedComponent;
 import dev.onyxstudios.cca.api.v3.component.tick.ServerTickingComponent;
@@ -22,6 +23,9 @@ public class BloodComponent implements AutoSyncedComponent, ServerTickingCompone
 
 		if(timer % 1200 == 0 && !entity.hasStatusEffect(ModStatusEffects.BLEED) && incrementBlood(1, true))
 			incrementBlood(1, false);
+
+		if(getBlood() <= 0 && timer % 80 == 0)
+			entity.damage(ModDamageSource.BLOOD_LOSS, 1);
 	}
 
 	@Override

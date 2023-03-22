@@ -17,7 +17,7 @@ public class HeadEntityPart extends AbstractEntityPart<LivingEntity> {
 
 	@Override
 	public boolean damage(DamageSource source, float amount) {
-		if((source.isProjectile() || GGGConfig.meleeCanHeadshot)) {
+		if(!world.isClient() && (source.isProjectile() || GGGConfig.meleeCanHeadshot)) {
 			if(source.getAttacker() instanceof PlayerEntity)
 				ModComponents.decrementBlood(getOwner(), ModComponents.getBlood(getOwner()), false);
 
