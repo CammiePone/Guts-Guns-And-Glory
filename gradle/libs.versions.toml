@@ -1,14 +1,16 @@
 [versions]
 # The latest versions are available at https://lambdaurora.dev/tools/import_quilt.html
-minecraft = "1.19.3"
-quilt_mappings = "1.19.3+build.23"
-quilt_loader = "0.18.2"
+minecraft = "1.19.2"
+quilt_mappings = "1.19.2+build.22"
+quilt_loader = "0.18.9"
 
-quilted_fabric_api = "5.0.0-beta.6+0.74.0-1.19.3"
-cca = "5.1.0"
-midnightlib = "1.1.0-quilt"
+quilted_fabric_api = "4.0.0-beta.30+0.76.0-1.19.2"
+cca = "5.0.2"
+geckolib = "3.1.41"
+playeranimator = "1.0.2"
+midnightlib = "0.6.1"
 mixinextras = "0.1.1"
-modmenu = "5.0.2"
+modmenu = "4.1.2"
 
 [libraries]
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
@@ -18,6 +20,8 @@ quilt_loader = { module = "org.quiltmc:quilt-loader", version.ref = "quilt_loade
 quilted_fabric_api = { module = "org.quiltmc.quilted-fabric-api:quilted-fabric-api", version.ref = "quilted_fabric_api" }
 cca_base = { module = "dev.onyxstudios.cardinal-components-api:cardinal-components-base", version.ref = "cca" }
 cca_entity = { module = "dev.onyxstudios.cardinal-components-api:cardinal-components-entity", version.ref = "cca" }
+geckolib = { module = "software.bernie.geckolib:geckolib-quilt-1.19", version.ref = "geckolib" }
+playeranimator = { module = "dev.kosmx.player-anim:player-animation-lib-fabric", version.ref = "playeranimator" }
 midnightlib = { module = "maven.modrinth:midnightlib", version.ref = "midnightlib" }
 mixinextras = { module = "com.github.LlamaLad7:MixinExtras", version.ref = "mixinextras" }
 modmenu = { module = "com.terraformersmc:modmenu", version.ref = "modmenu" }

@@ -16,7 +16,6 @@ import net.minecraft.item.SwordItem;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 import org.quiltmc.qsl.entity.multipart.api.EntityPart;
 import org.quiltmc.qsl.entity.multipart.api.MultipartEntity;
 import org.spongepowered.asm.mixin.Mixin;
@@ -31,21 +30,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class LivingEntityMixin extends Entity implements MultipartEntity {
 	@Shadow public abstract float getHeadYaw();
 	@Shadow public abstract boolean hasStatusEffect(StatusEffect effect);
+	@Shadow public abstract int getArmor();
+	@Shadow public abstract boolean addStatusEffect(StatusEffectInstance effect);
 
 	@Shadow
-	public abstract int getArmor();
-
-	@Shadow
-	public abstract void endCombat();
-
-	@Shadow
-	public abstract boolean addStatusEffect(StatusEffectInstance effect);
-
-	@Shadow
-	public abstract boolean addStatusEffect(StatusEffectInstance effect, @Nullable Entity source);
+	public abstract int getRoll();
 
 	@Unique private final LivingEntity self = (LivingEntity) (Object) this;
-	@Unique private final HeadEntityPart headPart = new HeadEntityPart(self, getWidth() + 0.02F, getHeight() / 4 + 0.01F, new Vec3d(0, getHeight() * 0.75, 0), new Vec3d(0d, getHeight() * 0.75, 0));
+	@Unique private final HeadEntityPart headPart = new HeadEntityPart(self, getWidth() + 0.04F, getHeight() / 4 + 0.02F, new Vec3d(0, getHeight() * 0.75, 0), new Vec3d(0d, getHeight() * 0.75, 0));
 
 	public LivingEntityMixin(EntityType<?> variant, World world) { super(variant, world); }
 
@@ -83,7 +75,7 @@ public abstract class LivingEntityMixin extends Entity implements MultipartEntit
 	@Inject(method = "tickMovement", at = @At("TAIL"))
 	private void ggg$tickMovement(CallbackInfo info) {
 		if(getType().isIn(EntityTags.HAS_HEAD))
-			headPart.rotate(getPitch(), getHeadYaw(), true);
+			headPart.rotate(getPitch(), getHeadYaw(), getRoll());
 	}
 
 	@Inject(method = "onSpawnPacket", at = @At("TAIL"))

@@ -4,9 +4,8 @@ import dev.cammiescorner.guts_guns_glory.GutsGunsGlory;
 import dev.cammiescorner.guts_guns_glory.common.status_effects.ModStatusEffect;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectType;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 import java.util.LinkedHashMap;
 
@@ -19,7 +18,7 @@ public class ModStatusEffects {
 
 	//-----Registry-----//
 	public static void register() {
-		STATUS_EFFECTS.keySet().forEach(item -> Registry.register(Registries.STATUS_EFFECT, STATUS_EFFECTS.get(item), item));
+		STATUS_EFFECTS.keySet().forEach(item -> Registry.register(Registry.STATUS_EFFECT, STATUS_EFFECTS.get(item), item));
 	}
 
 	private static <T extends StatusEffect> T create(String name, T statusEffect) {
