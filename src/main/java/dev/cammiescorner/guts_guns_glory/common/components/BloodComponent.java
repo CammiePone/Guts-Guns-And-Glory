@@ -49,9 +49,12 @@ public class BloodComponent implements AutoSyncedComponent, ServerTickingCompone
 	}
 
 	public void setBlood(int blood) {
+		if(blood <= 0)
+			ModComponents.setUnconscious(entity, true);
+
 		this.blood = blood;
 		this.lastBloodRegen = entity.getWorld().getTime();
-		ModComponents.BLOOD_COMPONENT.sync(entity);
+		ModComponents.BLOOD.sync(entity);
 	}
 
 	public boolean incrementBlood(int amount, boolean simulate) {

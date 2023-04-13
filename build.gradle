@@ -11,7 +11,7 @@ repositories {
 	maven { url "https://maven.terraformersmc.com" }
 	maven { url "https://ladysnake.jfrog.io/artifactory/mods" }
 	maven { url "https://maven.kosmx.dev/" }
-	maven { url "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/" }
+	maven { url "https://dl.cloudsmith.io/public/azuredoom-mods/azurelib/maven/" }
 	maven { url "https://api.modrinth.com/maven" }
 	maven { url "https://jitpack.io" }
 }
@@ -24,9 +24,7 @@ dependencies {
 	modImplementation libs.quilted.fabric.api
 	modImplementation libs.cca.base
 	modImplementation libs.cca.entity
-	modImplementation(libs.geckolib) {
-		exclude(group: "org.quiltmc:qsl")
-	}
+	modImplementation libs.azurelib
 	modImplementation libs.playeranimator
 	modImplementation libs.midnightlib
 	modImplementation libs.mixinextras

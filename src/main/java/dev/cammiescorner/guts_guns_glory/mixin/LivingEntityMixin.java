@@ -1,7 +1,9 @@
 package dev.cammiescorner.guts_guns_glory.mixin;
 
+import dev.cammiescorner.guts_guns_glory.common.config.GGGConfig;
 import dev.cammiescorner.guts_guns_glory.common.entities.HeadEntityPart;
 import dev.cammiescorner.guts_guns_glory.common.registry.EntityTags;
+import dev.cammiescorner.guts_guns_glory.common.registry.ModComponents;
 import dev.cammiescorner.guts_guns_glory.common.registry.ModStatusEffects;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -32,9 +34,7 @@ public abstract class LivingEntityMixin extends Entity implements MultipartEntit
 	@Shadow public abstract boolean hasStatusEffect(StatusEffect effect);
 	@Shadow public abstract int getArmor();
 	@Shadow public abstract boolean addStatusEffect(StatusEffectInstance effect);
-
-	@Shadow
-	public abstract int getRoll();
+	@Shadow public abstract int getRoll();
 
 	@Unique private final LivingEntity self = (LivingEntity) (Object) this;
 	@Unique private final HeadEntityPart headPart = new HeadEntityPart(self, getWidth() + 0.04F, getHeight() / 4 + 0.02F, new Vec3d(0, getHeight() * 0.75, 0), new Vec3d(0d, getHeight() * 0.75, 0));
@@ -70,6 +70,12 @@ public abstract class LivingEntityMixin extends Entity implements MultipartEntit
 				addStatusEffect(new StatusEffectInstance(ModStatusEffects.BLEED, 600, 1));
 			}
 		}
+	}
+
+	@Inject(method = "canMoveVoluntarily", at = @At("HEAD"), cancellable = true)
+	private void ggg$unconsciousness(CallbackInfoReturnable<Boolean> info) {
+		if(ModComponents.isUnconscious(self) && GGGConfig.losingBloodCausesUnconsciousness)
+			info.setReturnValue(false);
 	}
 
 	@Inject(method = "tickMovement", at = @At("TAIL"))

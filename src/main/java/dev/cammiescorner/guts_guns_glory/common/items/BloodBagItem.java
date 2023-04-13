@@ -38,7 +38,7 @@ public class BloodBagItem extends Item {
 				stack.decrement(1);
 
 			if(isFilled)
-				ModComponents.BLOOD_COMPONENT.get(player).incrementBlood(10, false);
+				ModComponents.BLOOD.get(player).incrementBlood(10, false);
 			else if(!player.isCreative())
 				ModComponents.decrementBlood(player, 10, false);
 
