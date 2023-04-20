@@ -11,6 +11,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.Item;
@@ -62,26 +63,37 @@ public abstract class LivingEntityMixin extends Entity implements MultipartEntit
 				Item item = attacker.getMainHandStack().getItem();
 
 				if(item instanceof SwordItem)
-					addStatusEffect(new StatusEffectInstance(ModStatusEffects.BLEED, 600, 1));
+					addStatusEffect(new StatusEffectInstance(ModStatusEffects.BLEED, 900, 1));
 				if(item instanceof AxeItem)
-					addStatusEffect(new StatusEffectInstance(ModStatusEffects.BLEED, 300, 0));
+					addStatusEffect(new StatusEffectInstance(ModStatusEffects.BLEED, 600, 0));
 			}
 			else if(source.getSource() instanceof ArrowEntity) {
-				addStatusEffect(new StatusEffectInstance(ModStatusEffects.BLEED, 600, 1));
+				addStatusEffect(new StatusEffectInstance(ModStatusEffects.BLEED, 900, 1));
 			}
 		}
 	}
 
 	@Inject(method = "canMoveVoluntarily", at = @At("HEAD"), cancellable = true)
 	private void ggg$unconsciousness(CallbackInfoReturnable<Boolean> info) {
-		if(ModComponents.isUnconscious(self) && GGGConfig.losingBloodCausesUnconsciousness)
+		if(!(self instanceof PlayerEntity) && ModComponents.isUnconscious(self) && GGGConfig.losingBloodCausesUnconsciousness)
 			info.setReturnValue(false);
+	}
+
+	@Inject(method = "tryUseTotem", at = @At(value = "INVOKE",
+			target = "Lnet/minecraft/entity/LivingEntity;setHealth(F)V"
+	))
+	private void ggg$useTotem(DamageSource source, CallbackInfoReturnable<Boolean> info) {
+		ModComponents.incrementBlood(self, 8, false);
+		ModComponents.setUnconscious(self, false);
 	}
 
 	@Inject(method = "tickMovement", at = @At("TAIL"))
 	private void ggg$tickMovement(CallbackInfo info) {
-		if(getType().isIn(EntityTags.HAS_HEAD))
+		if(getType().isIn(EntityTags.HAS_HEAD)) {
 			headPart.rotate(getPitch(), getHeadYaw(), getRoll());
+			headPart.setPosition(getPos().add(0, getHeight() - headPart.getHeight() + 0.02F, 0));
+			headPart.setDimensions(getWidth() + 0.04F, getHeight() / 4 + 0.02F);
+		}
 	}
 
 	@Inject(method = "onSpawnPacket", at = @At("TAIL"))

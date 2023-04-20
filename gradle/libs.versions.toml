@@ -2,12 +2,13 @@
 # The latest versions are available at https://lambdaurora.dev/tools/import_quilt.html
 minecraft = "1.19.2"
 quilt_mappings = "1.19.2+build.22"
-quilt_loader = "0.18.9"
+quilt_loader = "0.19.0-beta.12"
 
 quilted_fabric_api = "4.0.0-beta.30+0.76.0-1.19.2"
 cca = "5.0.2"
 azurelib = "1.0.16"
 playeranimator = "1.0.2"
+pehkui = "3.7.3"
 midnightlib = "0.6.1"
 mixinextras = "0.1.1"
 modmenu = "4.1.2"
@@ -22,6 +23,7 @@ cca_base = { module = "dev.onyxstudios.cardinal-components-api:cardinal-componen
 cca_entity = { module = "dev.onyxstudios.cardinal-components-api:cardinal-components-entity", version.ref = "cca" }
 azurelib = { module = "mod.azure.azurelib:azurelib-fabric-1.19.2", version.ref = "azurelib" }
 playeranimator = { module = "dev.kosmx.player-anim:player-animation-lib-fabric", version.ref = "playeranimator" }
+pehkui = { module = "com.github.Virtuoel:Pehkui", version.ref = "pehkui" }
 midnightlib = { module = "maven.modrinth:midnightlib", version.ref = "midnightlib" }
 mixinextras = { module = "com.github.LlamaLad7:MixinExtras", version.ref = "mixinextras" }
 modmenu = { module = "com.terraformersmc:modmenu", version.ref = "modmenu" }

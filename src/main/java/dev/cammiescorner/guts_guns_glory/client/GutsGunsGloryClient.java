@@ -69,9 +69,6 @@ public class GutsGunsGloryClient implements ClientModInitializer {
 					renderOverlay(UNCONSCIOUS_WAKE, 1F);
 					renderOverlay(UNCONSCIOUS_BLINK, (float) Math.max(0, Math.sin((entity.age + tickDelta) * 0.1)));
 				}
-
-				// TODO replace this with a better solution later
-				client.options.cinematicCamera = ModComponents.isUnconscious(entity) && entity instanceof PlayerEntity;
 			}
 		});
 	}

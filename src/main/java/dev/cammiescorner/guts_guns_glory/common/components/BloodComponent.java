@@ -1,5 +1,6 @@
 package dev.cammiescorner.guts_guns_glory.common.components;
 
+import dev.cammiescorner.guts_guns_glory.common.registry.EntityTags;
 import dev.cammiescorner.guts_guns_glory.common.registry.ModComponents;
 import dev.cammiescorner.guts_guns_glory.common.registry.ModDamageSource;
 import dev.cammiescorner.guts_guns_glory.common.registry.ModStatusEffects;
@@ -49,7 +50,7 @@ public class BloodComponent implements AutoSyncedComponent, ServerTickingCompone
 	}
 
 	public void setBlood(int blood) {
-		if(blood <= 0)
+		if(blood <= 0 && !entity.getType().isIn(EntityTags.UNCONSCIOUS_IMMUNITY))
 			ModComponents.setUnconscious(entity, true);
 
 		this.blood = blood;

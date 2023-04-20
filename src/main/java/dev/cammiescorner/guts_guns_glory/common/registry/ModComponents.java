@@ -33,6 +33,10 @@ public class ModComponents implements EntityComponentInitializer {
 		return BLOOD.get(entity).getBlood();
 	}
 
+	public static boolean incrementBlood(LivingEntity entity, int amount, boolean simulate) {
+		return BLOOD.get(entity).incrementBlood(amount, simulate);
+	}
+
 	public static boolean decrementBlood(LivingEntity entity, int amount, boolean simulate) {
 		return BLOOD.get(entity).decrementBlood(amount, simulate);
 	}

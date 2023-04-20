@@ -1,7 +1,7 @@
 package dev.cammiescorner.guts_guns_glory.common.registry;
 
 import dev.cammiescorner.guts_guns_glory.GutsGunsGlory;
-import dev.cammiescorner.guts_guns_glory.common.status_effects.ModStatusEffect;
+import dev.cammiescorner.guts_guns_glory.common.effects.ModStatusEffect;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectType;
 import net.minecraft.util.Identifier;
