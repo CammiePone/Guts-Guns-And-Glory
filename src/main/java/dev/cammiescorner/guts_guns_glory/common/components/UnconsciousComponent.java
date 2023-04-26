@@ -5,6 +5,8 @@ import dev.onyxstudios.cca.api.v3.component.sync.AutoSyncedComponent;
 import dev.onyxstudios.cca.api.v3.component.tick.ServerTickingComponent;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.nbt.NbtCompound;
+import virtuoel.pehkui.api.ScaleData;
+import virtuoel.pehkui.api.ScaleTypes;
 
 public class UnconsciousComponent implements AutoSyncedComponent, ServerTickingComponent {
 	private final LivingEntity entity;
@@ -42,8 +44,20 @@ public class UnconsciousComponent implements AutoSyncedComponent, ServerTickingC
 	}
 
 	public void setUnconscious(boolean unconscious) {
-		if(unconscious)
+		ScaleData heightData = ScaleTypes.HITBOX_HEIGHT.getScaleData(entity);
+		ScaleData eyeData = ScaleTypes.EYE_HEIGHT.getScaleData(entity);
+
+		if(unconscious) {
 			setTimer(600);
+
+			// TODO figure out how to tilt the head up
+			heightData.setScale(0.3F);
+			eyeData.setScale(0.3F);
+		}
+		else {
+			heightData.resetScale();
+			eyeData.resetScale();
+		}
 
 		isUnconscious = unconscious;
 		ModComponents.UNCONSCIOUS.sync(entity);

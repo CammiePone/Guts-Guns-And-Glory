@@ -22,4 +22,16 @@ public abstract class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 		if(ModComponents.isUnconscious(this) && GGGConfig.losingBloodCausesUnconsciousness)
 			info.setReturnValue(false);
 	}
+
+	@Inject(method = "isInSneakingPose", at = @At("HEAD"), cancellable = true)
+	private void ggg$noCrouchPose(CallbackInfoReturnable<Boolean> info) {
+		if(ModComponents.isUnconscious(this) && GGGConfig.losingBloodCausesUnconsciousness)
+			info.setReturnValue(false);
+	}
+
+	@Inject(method = "isSneaking", at = @At("HEAD"), cancellable = true)
+	private void ggg$noCrouch(CallbackInfoReturnable<Boolean> info) {
+		if(ModComponents.isUnconscious(this) && GGGConfig.losingBloodCausesUnconsciousness)
+			info.setReturnValue(false);
+	}
 }

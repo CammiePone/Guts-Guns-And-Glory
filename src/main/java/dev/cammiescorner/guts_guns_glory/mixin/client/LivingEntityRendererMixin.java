@@ -26,7 +26,7 @@ public abstract class LivingEntityRendererMixin<T extends LivingEntity, M extend
 	))
 	private void ggg$sleepyTimes(T livingEntity, float f, float g, MatrixStack matrices, VertexConsumerProvider vertexConsumerProvider, int i, CallbackInfo info) {
 		if(!livingEntity.getType().isIn(EntityTags.UNCONSCIOUS_IMMUNITY) && ModComponents.isUnconscious(livingEntity) && GGGConfig.losingBloodCausesUnconsciousness) {
-			if(livingEntity.getType().isIn(EntityTags.HAS_HEAD)) {
+			if(livingEntity.getType().isIn(EntityTags.HAS_VITALS)) {
 				matrices.translate(0, 1.3, 0.75);
 				matrices.multiply(Vec3f.NEGATIVE_X.getDegreesQuaternion(90));
 			}

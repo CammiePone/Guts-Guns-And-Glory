@@ -25,14 +25,25 @@ public class ModStatusEffect extends StatusEffect {
 
 	@Override
 	public void applyUpdateEffect(LivingEntity entity, int amplifier) {
-		if(this == ModStatusEffects.BLEED && ModComponents.decrementBlood(entity, 1, true))
+		if(this == ModStatusEffects.BLEED && ModComponents.decrementBlood(entity, 1, true)) {
 			ModComponents.decrementBlood(entity, 1, false);
+
+			/*
+			TODO when bleeding, blood particles should act as normal billboard particles until they hit the ground.
+			 When they hit the ground, they should become flat staring straight up.
+			 When coming from bleeding, blood particles just go in random directions from the bleeding entity, usually
+			 in a downward direction.
+			 Also make blood particles spawn when taking damage, going in the direction of the source of damage. Bullets
+			 cause blood to come out both sides.
+			 Blood particles only live for 5 minutes. They fade away after that.
+			*/
+		}
 	}
 
 	@Override
 	public boolean canApplyUpdateEffect(int duration, int amplifier) {
 		if(this == ModStatusEffects.BLEED)
-			return duration % (20 / (amplifier + 1)) == 0;
+			return duration % (40 / (amplifier + 1)) == 0;
 
 		return super.canApplyUpdateEffect(duration, amplifier);
 	}

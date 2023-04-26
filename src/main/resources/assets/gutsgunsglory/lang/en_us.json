@@ -11,7 +11,8 @@
 
   "gutsgunsglory.midnightconfig.title": "Guns, Guts, and Glory",
   "gutsgunsglory.midnightconfig.losingBloodCausesUnconsciousness": "Should Losing All Blood Make Entities Unconscious?",
-  "gutsgunsglory.midnightconfig.headshotsBoostDamage": "Should Headshots Boost Damage?",
-  "gutsgunsglory.midnightconfig.meleeCanHeadshot": "Can Melee Attacks Headshot?",
-  "gutsgunsglory.midnightconfig.headshotDamageMultiplier": "Headshot Damage Multiplier"
+  "gutsgunsglory.midnightconfig.vitalsHitBoostsDamage": "Should Hits to Vitals Boost Damage?",
+  "gutsgunsglory.midnightconfig.meleeCanHitVitals": "Can Melee Attacks Hit Vitals?",
+  "gutsgunsglory.midnightconfig.toolsCanCauseBleeding": "Can Tools Cause Bleeding?",
+  "gutsgunsglory.midnightconfig.vitalsHitDamageMultiplier": "Vital Hit Damage Multiplier"
 }

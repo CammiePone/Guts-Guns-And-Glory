@@ -18,10 +18,7 @@ public abstract class MouseMixin {
 
 	@Inject(method = "onCursorPos", at = @At("HEAD"), cancellable = true)
 	private void ggg$lockHead(long window, double x, double y, CallbackInfo info) {
-		if(isCursorLocked() && client.player != null && ModComponents.isUnconscious(client.player) && GGGConfig.losingBloodCausesUnconsciousness) {
-			client.player.setPitch(-90);
-			client.player.setYaw(0);
+		if(isCursorLocked() && client.player != null && ModComponents.isUnconscious(client.player) && GGGConfig.losingBloodCausesUnconsciousness)
 			info.cancel();
-		}
 	}
 }
