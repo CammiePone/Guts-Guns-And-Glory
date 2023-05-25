@@ -17,6 +17,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ToolItem;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 import org.quiltmc.qsl.entity.multipart.api.EntityPart;
 import org.quiltmc.qsl.entity.multipart.api.MultipartEntity;
 import org.spongepowered.asm.mixin.Mixin;
@@ -34,12 +35,25 @@ public abstract class LivingEntityMixin extends Entity implements MultipartEntit
 	@Shadow public abstract int getArmor();
 	@Shadow public abstract boolean addStatusEffect(StatusEffectInstance effect);
 	@Shadow public abstract int getRoll();
+	@Shadow @Nullable public abstract StatusEffectInstance getStatusEffect(StatusEffect effect);
 
 	@Unique private final LivingEntity self = (LivingEntity) (Object) this;
 	@Unique private final VitalEntityPart headPart = new VitalEntityPart(self, getWidth() + 0.04F, getHeight() * (0.2F) + 0.02F, true);
 	@Unique private final VitalEntityPart vitalPart = new VitalEntityPart(self, getWidth() + 0.04F, getHeight() * (0.2F) + 0.02F, false);
 
 	public LivingEntityMixin(EntityType<?> variant, World world) { super(variant, world); }
+
+	@Inject(method = "canTarget(Lnet/minecraft/entity/LivingEntity;)Z", at = @At("HEAD"), cancellable = true)
+	private void ggg$noTarget(LivingEntity target, CallbackInfoReturnable<Boolean> info) {
+		if(ModComponents.isUnconscious(target))
+			info.setReturnValue(false);
+	}
+
+	@Inject(method = "canSee", at = @At("HEAD"), cancellable = true)
+	private void ggg$noSee(Entity entity, CallbackInfoReturnable<Boolean> info) {
+		if(entity instanceof LivingEntity livingEntity && ModComponents.isUnconscious(livingEntity))
+			info.setReturnValue(false);
+	}
 
 	@Override
 	public EntityPart<?>[] getEntityParts() {
@@ -57,15 +71,21 @@ public abstract class LivingEntityMixin extends Entity implements MultipartEntit
 
 	@Inject(method = "damage", at = @At("HEAD"))
 	private void ggg$bleedOnHit(DamageSource source, float amount, CallbackInfoReturnable<Boolean> info) {
-		if(getArmor() <= 0 && amount > 0) {
+		if(amount > 0) {
+			int amplifier = hasStatusEffect(ModStatusEffects.BLEED) ? Math.min(4, getStatusEffect(ModStatusEffects.BLEED).getAmplifier() + 1) : 0;
+
+			// TODO make vanilla armour block bleed
 			if(source.getSource() instanceof LivingEntity attacker) {
 				Item item = attacker.getMainHandStack().getItem();
 
 				if(item instanceof ToolItem && GGGConfig.toolsCanCauseBleeding)
-					addStatusEffect(new StatusEffectInstance(ModStatusEffects.BLEED, Integer.MAX_VALUE, 0, true, false));
+					addStatusEffect(new StatusEffectInstance(ModStatusEffects.BLEED, Integer.MAX_VALUE, amplifier, true, false));
 			}
 			else if(source.getSource() instanceof ArrowEntity) {
-				addStatusEffect(new StatusEffectInstance(ModStatusEffects.BLEED, Integer.MAX_VALUE, 1, true, false));
+				addStatusEffect(new StatusEffectInstance(ModStatusEffects.BLEED, Integer.MAX_VALUE, amplifier, true, false));
+			}
+			else if(source.isExplosive()) {
+				addStatusEffect(new StatusEffectInstance(ModStatusEffects.BLEED, Integer.MAX_VALUE, 4, true, false));
 			}
 		}
 	}

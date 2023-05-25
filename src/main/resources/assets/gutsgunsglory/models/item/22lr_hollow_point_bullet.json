@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "gutsgunsglory:item/bullets/22lr/hollow_point"
+  }
+}

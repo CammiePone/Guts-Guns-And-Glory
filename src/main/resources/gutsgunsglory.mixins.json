@@ -4,7 +4,8 @@
 	"package": "dev.cammiescorner.guts_guns_glory.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"LivingEntityMixin"
+		"LivingEntityMixin",
+		"ProjectileEntityMixin"
 	],
 	"client": [
 		"client.BipedEntityModelMixin",

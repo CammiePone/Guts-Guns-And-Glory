@@ -25,7 +25,7 @@ public class BloodComponent implements AutoSyncedComponent, ServerTickingCompone
 		if(timer % 1200 == 0 && !entity.hasStatusEffect(ModStatusEffects.BLEED) && incrementBlood(1, true))
 			incrementBlood(1, false);
 
-		if(getBlood() <= 0 && timer % 80 == 0)
+		if(!ModComponents.isUnconscious(entity) && getBlood() <= 0 && timer % 80 == 0)
 			entity.damage(ModDamageSource.BLOOD_LOSS, 1);
 	}
 
