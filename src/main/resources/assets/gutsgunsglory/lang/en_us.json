@@ -3,18 +3,24 @@
   "item.gutsgunsglory.blood_bag": "Blood Bag",
   "item.gutsgunsglory.empty_blood_bag": "Empty Blood Bag",
 
+  "item.gutsgunsglory.22lr_auto_magazine": ".22LR Auto Magazine (20 Rounds)",
+  "item.gutsgunsglory.22lr_rifle_magazine": ".22LR Rifle Magazine (30 Rounds)",
   "item.gutsgunsglory.22lr_bullet": ".22LR Bullet",
   "item.gutsgunsglory.22lr_silver_bullet": ".22LR Silver Bullet",
   "item.gutsgunsglory.22lr_hollow_point_bullet": ".22LR HP Bullet",
+  "item.gutsgunsglory.22lr_green_tip_bullet": ".22LR GT Bullet",
   "item.gutsgunsglory.22lr_tracer_bullet": ".22LR Tracer Bullet",
   "item.gutsgunsglory.22lr_high_velocity_bullet": ".22LR HV Bullet",
   "item.gutsgunsglory.22lr_armor_piercing_bullet": ".22LR AP Bullet",
   "item.gutsgunsglory.22lr_incendiary_bullet": ".22LR Incendiary Bullet",
 
+  "item.gutsgunsglory.22_automatic": ".22 Automatic",
+
   "effect.gutsgunsglory.bleed": "Bleed",
 
-  "itemGroup.gutsgunsglory.general": "Guts, Guns, and Glory",
-  "itemGroup.gutsgunsglory.bullets": "GGG: Bullets",
+  "itemGroup.gutsgunsglory.guns": "GGG: Guns",
+  "itemGroup.gutsgunsglory.ammunition": "GGG: Ammunition",
+  "itemGroup.gutsgunsglory.medical_supplies": "GGG: Medical Supplies",
 
   "death.attack.gutsgunsglory.blood_loss": "%s died from blood loss",
 

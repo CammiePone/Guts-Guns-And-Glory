@@ -32,8 +32,8 @@ public abstract class BulletItem extends Item {
 		return Math.max(calibre.penetration + penetrationModifier, 0);
 	}
 
-	public void onShot(LivingEntity owner) {
-
+	public void shoot(LivingEntity owner) {
+		// TODO custom raycast that can hit multiple entities instead of just one
 	}
 
 	public void onHit(LivingEntity owner, HitResult hitResult) {
