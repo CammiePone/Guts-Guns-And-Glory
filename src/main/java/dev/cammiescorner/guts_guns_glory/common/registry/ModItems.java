@@ -1,10 +1,10 @@
 package dev.cammiescorner.guts_guns_glory.common.registry;
 
 import dev.cammiescorner.guts_guns_glory.GutsGunsGlory;
-import dev.cammiescorner.guts_guns_glory.common.items.BandageItem;
-import dev.cammiescorner.guts_guns_glory.common.items.BloodBagItem;
-import dev.cammiescorner.guts_guns_glory.common.items.BulletItem;
-import dev.cammiescorner.guts_guns_glory.common.items.MagazineItem;
+import dev.cammiescorner.guts_guns_glory.common.items.*;
+import mod.azure.azurelib.core.animation.Animation;
+import mod.azure.azurelib.core.animation.AnimationController;
+import mod.azure.azurelib.core.animation.RawAnimation;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
@@ -14,7 +14,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.registry.Registry;
-import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 
 import java.util.LinkedHashMap;
 
@@ -27,7 +26,26 @@ public class ModItems {
 	public static final Item BLOOD_BAG = create("blood_bag", new BloodBagItem(true));
 	public static final Item EMPTY_BLOOD_BAG = create("empty_blood_bag", new BloodBagItem(false));
 
-	public static final Item _22_AUTOMATIC = create("22_automatic", new Item(new QuiltItemSettings().maxCount(1)));
+	public static final Item _22_AUTOMATIC = create("22_automatic", new GunItem() {
+		@Override
+		public AnimationController<?> addAnims(AnimationController<?> controller) {
+			return controller
+					.triggerableAnim(SAFE_ANIM, RawAnimation.begin().then("handgun_safe", Animation.LoopType.HOLD_ON_LAST_FRAME))
+					.triggerableAnim(FIRING_ANIM, RawAnimation.begin().then("handgun_2_firing", Animation.LoopType.PLAY_ONCE))
+					.triggerableAnim(AIMING_ANIM, RawAnimation.begin().then("handgun_aiming", Animation.LoopType.PLAY_ONCE))
+					.triggerableAnim(RELOAD_ANIM, RawAnimation.begin().then("handgun_reload", Animation.LoopType.PLAY_ONCE));
+		}
+	});
+	public static final Item _22_RIFLE = create("22_rifle", new GunItem() {
+		@Override
+		public AnimationController<?> addAnims(AnimationController<?> controller) {
+			return controller
+					.triggerableAnim(SAFE_ANIM, RawAnimation.begin().then("safe", Animation.LoopType.HOLD_ON_LAST_FRAME))
+					.triggerableAnim(FIRING_ANIM, RawAnimation.begin().then("rifle_firing", Animation.LoopType.PLAY_ONCE))
+					.triggerableAnim(AIMING_ANIM, RawAnimation.begin().then("rifle_aiming", Animation.LoopType.PLAY_ONCE))
+					.triggerableAnim(RELOAD_ANIM, RawAnimation.begin().then("rifle_reload", Animation.LoopType.PLAY_ONCE));
+		}
+	});
 
 	public static final Item _22LR_AUTO_MAG = create("22lr_auto_magazine", new MagazineItem(BulletItem.Calibre._22LR, 20));
 	public static final Item _22LR_RIFLE_MAG = create("22lr_rifle_magazine", new MagazineItem(BulletItem.Calibre._22LR, 30));
@@ -57,6 +75,7 @@ public class ModItems {
 	public static void register() {
 		FabricItemGroupBuilder.create(GutsGunsGlory.id("guns")).icon(() -> new ItemStack(ModItems._22_AUTOMATIC)).appendItems(entries -> {
 			entries.add(new ItemStack(_22_AUTOMATIC));
+			entries.add(new ItemStack(_22_RIFLE));
 		}).build();
 
 		FabricItemGroupBuilder.create(GutsGunsGlory.id("ammunition")).icon(() -> new ItemStack(ModItems._22LR_BULLET)).appendItems(entries -> {
