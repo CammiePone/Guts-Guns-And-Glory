@@ -119,14 +119,6 @@
 					"pivot": [0, 6, -4]
 				},
 				{
-					"name": "mag_20",
-					"parent": "magazine",
-					"pivot": [0, 6, -4],
-					"cubes": [
-						{"origin": [-0.5, 3, -5.5], "size": [1, 6, 2], "pivot": [0, 6, -3.5], "rotation": [10, 0, 0], "uv": [10, 0]}
-					]
-				},
-				{
 					"name": "mag_30",
 					"parent": "magazine",
 					"pivot": [0, 6, -4],
@@ -150,7 +142,7 @@
 					"pivot": [0, 3, 1]
 				},
 				{
-					"name": "scope_1",
+					"name": "12x_optic",
 					"parent": "scopes",
 					"pivot": [1, 10.75, -4],
 					"cubes": [
@@ -167,7 +159,7 @@
 					]
 				},
 				{
-					"name": "scope_2",
+					"name": "8x_optic",
 					"parent": "scopes",
 					"pivot": [1, 11.75, -5],
 					"cubes": [

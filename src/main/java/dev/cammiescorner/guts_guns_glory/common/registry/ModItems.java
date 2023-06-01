@@ -26,7 +26,10 @@ public class ModItems {
 	public static final Item BLOOD_BAG = create("blood_bag", new BloodBagItem(true));
 	public static final Item EMPTY_BLOOD_BAG = create("empty_blood_bag", new BloodBagItem(false));
 
-	public static final Item _22_AUTOMATIC = create("22_automatic", new GunItem() {
+	public static final MagazineItem _22LR_AUTO_MAG = create("22lr_auto_magazine", new MagazineItem(BulletItem.Calibre._22LR, 20, 1));
+	public static final MagazineItem _22LR_RIFLE_MAG = create("22lr_rifle_magazine", new MagazineItem(BulletItem.Calibre._22LR, 30, 1F));
+
+	public static final GunItem _22_AUTOMATIC = create("22_automatic", new GunItem(BulletItem.Calibre._22LR, GunItem.FireType.SEMI_AUTO, 0.05F, 40, 5, 60, true, _22LR_AUTO_MAG) {
 		@Override
 		public AnimationController<?> addAnims(AnimationController<?> controller) {
 			return controller
@@ -36,7 +39,7 @@ public class ModItems {
 					.triggerableAnim(RELOAD_ANIM, RawAnimation.begin().then("handgun_reload", Animation.LoopType.PLAY_ONCE));
 		}
 	});
-	public static final Item _22_RIFLE = create("22_rifle", new GunItem() {
+	public static final GunItem _22_RIFLE = create("22_rifle", new GunItem(BulletItem.Calibre._22LR, GunItem.FireType.SEMI_AUTO, 0.05F, 60, 5, 80, false, _22LR_RIFLE_MAG) {
 		@Override
 		public AnimationController<?> addAnims(AnimationController<?> controller) {
 			return controller
@@ -47,17 +50,14 @@ public class ModItems {
 		}
 	});
 
-	public static final Item _22LR_AUTO_MAG = create("22lr_auto_magazine", new MagazineItem(BulletItem.Calibre._22LR, 20));
-	public static final Item _22LR_RIFLE_MAG = create("22lr_rifle_magazine", new MagazineItem(BulletItem.Calibre._22LR, 30));
-
-	public static final Item _22LR_BULLET = create("22lr_bullet", new BulletItem(BulletItem.Calibre._22LR, 0, 1) {});
-	public static final Item _22LR_SILVER_BULLET = create("22lr_silver_bullet", new BulletItem(BulletItem.Calibre._22LR, 0, 1) {});
-	public static final Item _22LR_HP_BULLET = create("22lr_hollow_point_bullet", new BulletItem(BulletItem.Calibre._22LR, -1, 2) {});
-	public static final Item _22LR_GREEN_TIP_BULLET = create("22lr_green_tip_bullet", new BulletItem(BulletItem.Calibre._22LR, 1, 1) {});
-	public static final Item _22LR_TRACER_BULLET = create("22lr_tracer_bullet", new BulletItem(BulletItem.Calibre._22LR, 0, 1) {});
-	public static final Item _22LR_HV_BULLET = create("22lr_high_velocity_bullet", new BulletItem(BulletItem.Calibre._22LR, 1, 1) {});
-	public static final Item _22LR_AP_BULLET = create("22lr_armor_piercing_bullet", new BulletItem(BulletItem.Calibre._22LR, 2, 0) {});
-	public static final Item _22LR_INCENDIARY_BULLET = create("22lr_incendiary_bullet", new BulletItem(BulletItem.Calibre._22LR, -1, 0) {
+	public static final BulletItem _22LR_BULLET = create("22lr_bullet", new BulletItem(BulletItem.Calibre._22LR, 0, 1) {});
+	public static final BulletItem _22LR_SILVER_BULLET = create("22lr_silver_bullet", new BulletItem(BulletItem.Calibre._22LR, 0, 1) {});
+	public static final BulletItem _22LR_HP_BULLET = create("22lr_hollow_point_bullet", new BulletItem(BulletItem.Calibre._22LR, -1, 2) {});
+	public static final BulletItem _22LR_GREEN_TIP_BULLET = create("22lr_green_tip_bullet", new BulletItem(BulletItem.Calibre._22LR, 1, 1) {});
+	public static final BulletItem _22LR_TRACER_BULLET = create("22lr_tracer_bullet", new BulletItem(BulletItem.Calibre._22LR, 0, 1) {});
+	public static final BulletItem _22LR_HV_BULLET = create("22lr_high_velocity_bullet", new BulletItem(BulletItem.Calibre._22LR, 1, 1) {});
+	public static final BulletItem _22LR_AP_BULLET = create("22lr_armor_piercing_bullet", new BulletItem(BulletItem.Calibre._22LR, 2, 0) {});
+	public static final BulletItem _22LR_INCENDIARY_BULLET = create("22lr_incendiary_bullet", new BulletItem(BulletItem.Calibre._22LR, -1, 0) {
 		@Override
 		public void onHit(LivingEntity owner, HitResult hitResult) {
 			if(hitResult.getType() == HitResult.Type.ENTITY) {

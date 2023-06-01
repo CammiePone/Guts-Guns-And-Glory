@@ -1,0 +1,1001 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.player.rifle_hold": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"vector": [-50, -65, 0]
+					},
+					"position": {
+						"vector": [-1, 0, 0]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"vector": [-30, 0, 0]
+					},
+					"position": {
+						"vector": [0, -1, 0]
+					}
+				}
+			}
+		},
+		"animation.player.rifle_to_aim": {
+			"animation_length": 0.32,
+			"bones": {
+				"head": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.32": {
+							"vector": [18.88172, -41.64114, -27.23631]
+						}
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"vector": [-50, -65, 0]
+						},
+						"0.32": {
+							"vector": [-90, -45, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [-1, 0, 0]
+						},
+						"0.32": {
+							"vector": [0, 0, 1]
+						}
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": {
+							"vector": [-30, 0, 0]
+						},
+						"0.32": {
+							"vector": [-90, 0, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, -1, 0]
+						},
+						"0.32": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"body": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.32": {
+							"vector": [0, 45, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.player.rifle_aim": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": {
+						"vector": [18.88172, -41.64114, -27.23631]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"vector": [-90, -45, 0]
+					},
+					"position": {
+						"vector": [0, 0, 1]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"vector": [-90, 0, 0]
+					},
+					"position": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"body": {
+					"rotation": {
+						"vector": [0, 45, 0]
+					}
+				}
+			}
+		},
+		"animation.player.rifle_to_hold": {
+			"animation_length": 0.32,
+			"bones": {
+				"head": {
+					"rotation": {
+						"0.0": {
+							"vector": [18.88172, -41.64114, -27.23631]
+						},
+						"0.32": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"vector": [-90, -45, 0]
+						},
+						"0.32": {
+							"vector": [-50, -65, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 1]
+						},
+						"0.32": {
+							"vector": [-1, 0, 0]
+						}
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": {
+							"vector": [-90, 0, 0]
+						},
+						"0.32": {
+							"vector": [-30, 0, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.32": {
+							"vector": [0, -1, 0]
+						}
+					}
+				},
+				"body": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 45, 0]
+						},
+						"0.32": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.player.rifle_fire": {
+			"animation_length": 0.16,
+			"bones": {
+				"head": {
+					"rotation": {
+						"vector": [18.88172, -41.64114, -27.23631]
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.04": {
+							"vector": [-0.5, 0, 0.5]
+						},
+						"0.12": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"vector": [-90, -45, 0]
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 1]
+						},
+						"0.04": {
+							"vector": [-1, 0, 2]
+						},
+						"0.12": {
+							"vector": [0, 0, 1]
+						}
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"vector": [-90, 0, 0]
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.04": {
+							"vector": [-1, 0, 1]
+						},
+						"0.12": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"body": {
+					"rotation": {
+						"vector": [0, 45, 0]
+					}
+				},
+				"torso": {
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.04": {
+							"vector": [-0.25, 0, 0.25]
+						},
+						"0.12": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.player.handgun_hold": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": {
+						"vector": [0, -41.6411, 0]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"vector": [-35, -45, 0]
+					},
+					"position": {
+						"vector": [2, 0, -2]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"vector": [-37.41614, 26.68675, 11.51592]
+					},
+					"position": {
+						"vector": [-1, -1, 0]
+					}
+				},
+				"body": {
+					"rotation": {
+						"vector": [0, 45, 0]
+					}
+				}
+			}
+		},
+		"animation.player.handgun_to_aim": {
+			"animation_length": 0.32,
+			"bones": {
+				"head": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, -41.6411, 0]
+						},
+						"0.32": {
+							"vector": [18.88172, -41.64114, -27.23631]
+						}
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"vector": [-35, -45, 0]
+						},
+						"0.32": {
+							"vector": [-90, -45, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [2, 0, -2]
+						},
+						"0.32": {
+							"vector": [2, 0, -2]
+						}
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": {
+							"vector": [-37.41614, 26.68675, 11.51592]
+						},
+						"0.32": {
+							"vector": [-85, 20, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [-1, -1, 0]
+						},
+						"0.32": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"body": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 45, 0]
+						},
+						"0.32": {
+							"vector": [0, 45, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.player.handgun_aim": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": {
+						"vector": [18.88172, -41.64114, -27.23631]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"vector": [-90, -45, 0]
+					},
+					"position": {
+						"vector": [2, 0, -2]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"vector": [-85, 20, 0]
+					}
+				},
+				"body": {
+					"rotation": {
+						"vector": [0, 45, 0]
+					}
+				}
+			}
+		},
+		"animation.player.handgun_to_hold": {
+			"animation_length": 0.32,
+			"bones": {
+				"head": {
+					"rotation": {
+						"0.0": {
+							"vector": [18.88172, -41.64114, -27.23631]
+						},
+						"0.32": {
+							"vector": [0, -41.6411, 0]
+						}
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"vector": [-90, -45, 0]
+						},
+						"0.32": {
+							"vector": [-35, -45, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [2, 0, -2]
+						},
+						"0.32": {
+							"vector": [2, 0, -2]
+						}
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": {
+							"vector": [-85, 20, 0]
+						},
+						"0.32": {
+							"vector": [-37.41614, 26.68675, 11.51592]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.32": {
+							"vector": [-1, -1, 0]
+						}
+					}
+				},
+				"body": {
+					"rotation": {
+						"vector": [0, 45, 0]
+					}
+				}
+			}
+		},
+		"animation.player.handgun_fire": {
+			"animation_length": 0.12,
+			"bones": {
+				"head": {
+					"rotation": {
+						"vector": [18.88172, -41.64114, -27.23631]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"vector": [-90, -45, 0]
+						},
+						"0.04": {
+							"vector": [-95, -45, 0]
+						},
+						"0.12": {
+							"vector": [-90, -45, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [2, 0, -2]
+						},
+						"0.04": {
+							"vector": [1.75, 0, -1.75]
+						},
+						"0.12": {
+							"vector": [2, 0, -2]
+						}
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": {
+							"vector": [-85, 20, 0]
+						},
+						"0.04": {
+							"vector": [-90, 20, 0]
+						},
+						"0.12": {
+							"vector": [-85, 20, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.04": {
+							"vector": [-0.25, 0, 0.25]
+						},
+						"0.12": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"body": {
+					"rotation": {
+						"vector": [0, 45, 0]
+					}
+				}
+			}
+		},
+		"animation.player.handgun_to_aim_item": {
+			"animation_length": 0.32,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"vector": [-22.5, 0, 0]
+						},
+						"0.32": {
+							"vector": [-90, 22.5, 0]
+						}
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"vector": [-22.5, 0, 0]
+					}
+				},
+				"body": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.32": {
+							"vector": [0, -22.5, 0]
+						}
+					}
+				},
+				"head": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.32": {
+							"vector": [0, 22.5, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.player.handgun_aim_item": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"vector": [-90, 22.5, 0]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"vector": [-22.5, 0, 0]
+					}
+				},
+				"body": {
+					"rotation": {
+						"vector": [0, -22.5, 0]
+					}
+				},
+				"head": {
+					"rotation": {
+						"vector": [0, 22.5, 0]
+					}
+				}
+			}
+		},
+		"animation.player.handgun_to_hold_item": {
+			"animation_length": 0.32,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"vector": [-90, 22.5, 0]
+						},
+						"0.32": {
+							"vector": [-22.5, 0, 0]
+						}
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"vector": [-22.5, 0, 0]
+					}
+				},
+				"body": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, -22.5, 0]
+						},
+						"0.32": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"head": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 22.5, 0]
+						},
+						"0.32": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.player.handgun_fire_item": {
+			"animation_length": 0.12,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"vector": [-90, 22.5, 0]
+						},
+						"0.04": {
+							"vector": [-95, 22.5, 0]
+						},
+						"0.12": {
+							"vector": [-90, 22.5, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.04": {
+							"vector": [0, 0, 0.25]
+						},
+						"0.12": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"vector": [-22.5, 0, 0]
+					}
+				},
+				"body": {
+					"rotation": {
+						"vector": [0, -22.5, 0]
+					}
+				},
+				"head": {
+					"rotation": {
+						"vector": [0, 22.5, 0]
+					}
+				}
+			}
+		},
+		"animation.player.emplacement": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"position": {
+						"vector": [0, -9, 0]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"vector": [-80, -40, 0]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"vector": [-80, 40, 0]
+					}
+				},
+				"rightLeg": {
+					"rotation": {
+						"vector": [-60, 22.5, 0]
+					}
+				},
+				"leftLeg": {
+					"rotation": {
+						"vector": [-60, -22.5, 0]
+					}
+				}
+			}
+		},
+		"animation.player.emplacement_fire": {
+			"animation_length": 0.08,
+			"bones": {
+				"body": {
+					"position": {
+						"vector": [0, -9, 0]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"vector": [-80, -40, 0]
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.04": {
+							"vector": [0, 0, 1]
+						},
+						"0.08": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"vector": [-80, 40, 0]
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.04": {
+							"vector": [0, 0, 1]
+						},
+						"0.08": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"rightLeg": {
+					"rotation": {
+						"vector": [-60, 22.5, 0]
+					}
+				},
+				"leftLeg": {
+					"rotation": {
+						"vector": [-60, -22.5, 0]
+					}
+				}
+			}
+		},
+		"animation.player.rifle_aim_prone": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": {
+						"vector": [18.88172, -41.64114, -27.23631]
+					},
+					"position": {
+						"vector": [0, -22, 0]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"vector": [-90, -45, 0]
+					},
+					"position": {
+						"vector": [0, -21, 1]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"vector": [-90, 0, 0]
+					},
+					"position": {
+						"vector": [0, -21, 0]
+					}
+				},
+				"body": {
+					"rotation": {
+						"vector": [0, 45, 0]
+					}
+				},
+				"torso": {
+					"rotation": {
+						"vector": [85, -45, 0]
+					},
+					"position": {
+						"vector": [0, -22, 0]
+					}
+				},
+				"rightLeg": {
+					"rotation": {
+						"vector": [87.5, -45, 0]
+					},
+					"position": {
+						"vector": [-7.5, -11, 6.6]
+					}
+				},
+				"leftLeg": {
+					"rotation": {
+						"vector": [87.5, -45, 0]
+					},
+					"position": {
+						"vector": [-8.5, -11, 9.45]
+					}
+				}
+			}
+		},
+		"animation.player.rifle_fire_prone": {
+			"animation_length": 0.12,
+			"bones": {
+				"head": {
+					"rotation": {
+						"vector": [18.88172, -41.64114, -27.23631]
+					},
+					"position": {
+						"vector": [0, -22, 0]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"vector": [-90, -45, 0]
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, -21, 1]
+						},
+						"0.04": {
+							"vector": [-1, -21, 2]
+						},
+						"0.12": {
+							"vector": [0, -21, 1]
+						}
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"vector": [-90, 0, 0]
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, -21, 0]
+						},
+						"0.04": {
+							"vector": [-1, -21, 1]
+						},
+						"0.12": {
+							"vector": [0, -21, 0]
+						}
+					}
+				},
+				"body": {
+					"rotation": {
+						"vector": [0, 45, 0]
+					}
+				},
+				"torso": {
+					"rotation": {
+						"vector": [85, -45, 0]
+					},
+					"position": {
+						"vector": [0, -22, 0]
+					}
+				},
+				"rightLeg": {
+					"rotation": {
+						"vector": [87.5, -45, 0]
+					},
+					"position": {
+						"vector": [-7.5, -11, 6.6]
+					}
+				},
+				"leftLeg": {
+					"rotation": {
+						"vector": [87.5, -45, 0]
+					},
+					"position": {
+						"vector": [-8.5, -11, 9.45]
+					}
+				}
+			}
+		},
+		"animation.player.handgun_aim_prone": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": {
+						"vector": [18.88172, -41.64114, -27.23631]
+					},
+					"position": {
+						"vector": [0, -22, 0]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"vector": [-90, -45, 0]
+					},
+					"position": {
+						"vector": [2, -21, -2]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"vector": [-85, 20, 0]
+					},
+					"position": {
+						"vector": [0, -21, 0]
+					}
+				},
+				"body": {
+					"rotation": {
+						"vector": [0, 45, 0]
+					}
+				},
+				"torso": {
+					"rotation": {
+						"vector": [85, -45, 0]
+					},
+					"position": {
+						"vector": [0, -22, 0]
+					}
+				},
+				"rightLeg": {
+					"rotation": {
+						"vector": [87.5, -45, 0]
+					},
+					"position": {
+						"vector": [-7.5, -11, 6.6]
+					}
+				},
+				"leftLeg": {
+					"rotation": {
+						"vector": [87.5, -45, 0]
+					},
+					"position": {
+						"vector": [-8.5, -11, 9.45]
+					}
+				}
+			}
+		},
+		"animation.player.handgun_fire_prone": {
+			"animation_length": 0.12,
+			"bones": {
+				"head": {
+					"rotation": {
+						"vector": [18.88172, -41.64114, -27.23631]
+					},
+					"position": {
+						"vector": [0, -22, 0]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"vector": [-90, -45, 0]
+						},
+						"0.04": {
+							"vector": [-95, -45, 0]
+						},
+						"0.12": {
+							"vector": [-90, -45, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [2, -21, -2]
+						},
+						"0.04": {
+							"vector": [1.75, -21, -1.75]
+						},
+						"0.12": {
+							"vector": [2, -21, -2]
+						}
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": {
+							"vector": [-85, 20, 0]
+						},
+						"0.04": {
+							"vector": [-90, 20, 0]
+						},
+						"0.12": {
+							"vector": [-85, 20, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, -21, 0]
+						},
+						"0.04": {
+							"vector": [-0.25, -21, 0.25]
+						},
+						"0.12": {
+							"vector": [0, -21, 0]
+						}
+					}
+				},
+				"body": {
+					"rotation": {
+						"vector": [0, 45, 0]
+					}
+				},
+				"torso": {
+					"rotation": {
+						"vector": [85, -45, 0]
+					},
+					"position": {
+						"vector": [0, -22, 0]
+					}
+				},
+				"rightLeg": {
+					"rotation": {
+						"vector": [87.5, -45, 0]
+					},
+					"position": {
+						"vector": [-7.5, -11, 6.6]
+					}
+				},
+				"leftLeg": {
+					"rotation": {
+						"vector": [87.5, -45, 0]
+					},
+					"position": {
+						"vector": [-8.5, -11, 9.45]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}
